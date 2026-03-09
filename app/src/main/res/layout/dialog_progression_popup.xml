@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/treePopupCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- 🧾 Total Recycled Text -->
+        <TextView
+            android:id="@+id/treePopupTotalRecycled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You’ve recycled 0.0 kg"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center" />
+
+        <!-- 📉 Progress Bar -->
+        <ProgressBar
+            android:id="@+id/treePopupProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:progress="0"
+            android:max="100"
+            android:progressTint="@color/green"
+            android:backgroundTint="@color/light_gray" />
+
+        <!-- 📊 Text Below Progress Bar -->
+        <TextView
+            android:id="@+id/treePopupRemainingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.5 kg to next stage"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- 🌳 Main Tree Animation -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/treePopupMainAnim"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp" />
+
+        <!-- 🔤 Tree Level Label -->
+        <TextView
+            android:id="@+id/treePopupLevelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level 1: Sapling"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/green"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="@color/green"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- 🌱 Preview Strip -->
+        <LinearLayout
+            android:id="@+id/treePopupPreviewStrip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+            <!-- Dynamically populated -->
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="startGameButton" type="id" />
+    <item name="textRecycleType" type="id" />
+    <item name="selectedLocationText" type="id" />
+    <item name="weightInput" type="id" />
+    <item name="uploadImageBtn" type="id" />
+    <item name="imagePreview" type="id" />
+    <item name="pointsText" type="id" />
+    <item name="submitBtn" type="id" />
+</resources>

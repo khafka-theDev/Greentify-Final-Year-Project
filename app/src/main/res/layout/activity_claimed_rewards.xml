@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Claimed Rewards"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/darkGreen"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/textNoClaimedRewards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No reward claimed yet."
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerClaimedRewards"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

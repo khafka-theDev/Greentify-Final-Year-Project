@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Custom Button Style -->
+    <style name="GreentifyButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/light_gray</item>
+        <item name="android:textColor">@color/colorBackground</item>
+    </style>
+
+    <style name="RoundedImageShape" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- Makes it perfectly round -->
+    </style>
+
+</resources>

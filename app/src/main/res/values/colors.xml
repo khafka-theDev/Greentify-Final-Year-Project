@@ -1,0 +1,43 @@
+<resources>
+    <!-- Main Theme Colors -->
+    <color name="colorPrimary">#2E7D32</color> <!-- dark green -->
+    <color name="colorPrimaryDark">#cc5500</color> <!-- darker green -->
+    <color name="colorAccent">#FFCC99</color> <!-- light blue -->
+    <color name="colorBackground">#F5F5F5</color> <!-- light gray background -->
+    <color name="bottom_menu">#FFFFFF</color> <!-- white background for bottom menu -->#CC000000
+    <color name="transparent">#CC000000</color>
+
+    <!-- Navigation and UI -->
+    <color name="nav_item_color1">#000000</color>
+    <color name="cyan">#D1FEB8</color> <!-- material cyan -->
+    <color name="nav_item_color2">#00897B</color> <!-- Teal -->
+    <color name="nav_ripple_color">#40C4C4C4</color> <!-- soft ripple effect -->
+    <color name="unread_background">#FFF9C4</color> <!-- Light Yellow -->
+
+    <!-- Text Colors -->
+    <color name="colorText">#000000</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="grey">#808080</color>
+    <color name="highlight_color">#BFE3B4</color> <!-- Example color for highlighting -->
+
+    <!-- Common Colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#808080</color>
+    <color name="lightGray">#F8F8F8</color>
+    <color name="red">#D32F2F</color>
+    <color name="green">#14342C</color>
+    <color name="lightGrey">#F0F0F0</color>
+    <color name="light_gray">#F0F0F0</color>
+    <color name="primary_color">#00BCD4</color> <!-- or match your rounded_border color -->
+
+
+    <color name="darkGreen">#363737</color> <!-- color text Greentify -->
+    <color name="Nude">#E7D7CA</color>
+
+
+    <!-- Button States -->
+    <color name="buttonDefault">#cc5500</color>
+    <color name="buttonPressed">#F0FFFF</color> <!-- super light blue -->
+</resources>

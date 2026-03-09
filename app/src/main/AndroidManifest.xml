@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:enableOnBackInvokedCallback="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Greentify"
+        tools:targetApi="31">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD9nO_yGM4V4GFV4_fdmte9AR8Guvk2sxg" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <!-- Activities -->
+        <activity android:name=".RecycleStart.PaperRecycleActivity" />
+        <activity android:name=".RecycleStart.UploadRecycleActivity" android:exported="true" />
+        <activity android:name=".RecycleStart.LocationSelectionActivity" android:exported="true" />
+        <activity android:name="org.oss.greentify.Home.HistoryActivity" android:exported="false" />
+        <activity android:name=".HowDoIActivity" />
+        <activity android:name=".AddFriend.FriendListActivity" />
+        <activity android:name=".AddFriend.FriendRequestActivity" />
+        <activity android:name=".AddFriend.FriendProfileActivity" />
+        <activity android:name=".Home.AboutActivity" />
+        <activity
+            android:name=".Rewards.ClaimedRewardsActivity"
+            android:exported="false" />
+        <activity android:name="org.oss.greentify.GlobalLeaderboard.GlobalLeaderboardActivity" android:exported="false" />
+        <activity android:name="org.oss.greentify.MainActivity" android:exported="false" />
+        <activity android:name="org.oss.greentify.RegisterActivity" android:exported="false" />
+        <activity android:name=".Rewards.RewardClaimActivity" />
+        <activity android:name=".Rewards.RewardsActivity" />
+        <activity android:name=".Rewards.RewardDetailActivity" />
+        <activity android:name=".ProfileActivity" />
+
+        <!-- ✅ Set OnboardingActivity as the launcher -->
+        <activity
+            android:name=".viewpager.OnboardingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ❌ LoginActivity no longer the launcher -->
+        <activity android:name="org.oss.greentify.LoginActivity" android:exported="true" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Greentify</string>
+    <string name="login">Login</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="register_cta">Don\'t have an account? Register</string>
+    <string name="register">Register</string>
+    <string name="login_cta">Already have an account? Login</string>
+    <string name="logout">Logout</string>
+    <string name="start_game">Start Game</string>
+    <string name="time">Time: %d</string>
+    <string name="score">Score: %d</string>
+    <string name="question">Question</string>
+    <string name="isTrue">True</string>
+    <string name="isFalse">False</string>
+    <string name="congratulations">Congratulations %s!</string>
+    <string name="high_score">High-score: %d</string>
+    <string name="play_again">Play Again</string>
+    <string name="leaderboard_place">#%d</string>
+    <string name="leaderboard_username">%s</string>
+    <string name="leaderboard_score">%d</string>
+    <string name="leaderboard_place_header">#</string>
+    <string name="leaderboard_username_header">Username</string>
+    <string name="leaderboard_score_header">Score</string>
+    <string name="leaderboard_title">Leaderboard</string>
+    <string name="view_leaderboard">View Leaderboard</string>
+    <string name="back">Back</string>
+    <string name="go_to_main_menu">Go to Main menu</string>
+    <string name="leaderboard_datetime">%s</string>
+    <string name="leaderboard_datetime_header">Datetime</string>
+    <string name="personal_leaderboard_title">Personal Leaderboard</string>
+    <string name="personal_leaderboard_title_username">Personal Leaderboard (%s)</string>
+    <string name="personal_leaderboard_top_scores_title">Personal Leaderboard (Top Scores)</string>
+    <string name="leaderboard_position">This is %d. best score on the leaderboard!</string>
+    <string name="avatar">Avatar</string>
+    <string name="reward_image_desc">Image of the reward item</string>
+    <string name="reward_image">Image of the reward item</string>
+
+</resources>

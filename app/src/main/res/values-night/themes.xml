@@ -1,0 +1,63 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme using Material3 -->
+    <style name="Theme.Greentify" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Colors -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorBackground</item>
+
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorOnSecondary">@color/colorBackground</item>
+
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorBackground</item>
+        <item name="colorOnSurface">@color/colorText</item>
+
+        <!-- Font Family for the whole theme -->
+        <item name="android:fontFamily">@font/adlam_display</item>
+        <item name="fontFamily">@font/adlam_display</item>
+
+        <!-- Override Material3 TextAppearances to use your font -->
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Greentify.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Greentify.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Greentify.BodySmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Greentify.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Greentify.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Greentify.TitleSmall</item>
+
+        <!-- Button style -->
+        <item name="android:buttonStyle">@style/GreentifyButton</item>
+    </style>
+
+    <!-- TextAppearance styles that apply your font -->
+    <style name="TextAppearance.Greentify.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/adlam_display</item>
+    </style>
+
+    <style name="TextAppearance.Greentify.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/adlam_display</item>
+    </style>
+
+    <style name="TextAppearance.Greentify.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/adlam_display</item>
+    </style>
+
+    <style name="TextAppearance.Greentify.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/adlam_display</item>
+    </style>
+
+    <style name="TextAppearance.Greentify.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/adlam_display</item>
+    </style>
+
+    <style name="TextAppearance.Greentify.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/adlam_display</item>
+    </style>
+
+    <!-- Button style placeholder -->
+    <style name="GreentifyButton" parent="Widget.Material3.Button">
+        <!-- Customize your button here -->
+    </style>
+
+</resources>

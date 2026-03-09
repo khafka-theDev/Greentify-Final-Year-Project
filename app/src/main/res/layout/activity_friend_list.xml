@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <!-- 🟦 Main Content Layout -->
+    <LinearLayout
+        android:id="@+id/mainAddFriendLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_marginBottom="56dp">
+
+        <!-- 🔍 Search Bar -->
+        <EditText
+            android:id="@+id/searchFriendInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="🔎 Search by name..."
+            android:background="@drawable/rounded_white_transparent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:fontFamily="@font/adlam_display"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 🔘 Button Row: Friend Requests + Your Friends -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnFriendRequests"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="🔔 Requests"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/nav_item_color2"
+                android:textColor="@android:color/white"
+                android:elevation="3dp"
+                android:fontFamily="@font/adlam_display"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnShowYourFriends"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="👥 Your Friends"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/nav_item_color2"
+                android:textColor="@android:color/white"
+                android:elevation="3dp"
+                android:fontFamily="@font/adlam_display" />
+        </LinearLayout>
+
+        <!-- 🌱 Suggested Friends Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Suggested Friends 🌟"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="@font/adlam_display" />
+
+        <!-- Suggested Friends Recycler -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFriends"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp" />
+    </LinearLayout>
+
+    <!-- 🟧 Slide-In Panel: Accepted Friends -->
+    <LinearLayout
+        android:id="@+id/yourFriendsPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="20dp"
+        android:elevation="10dp"
+        android:translationX="-1000dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnCloseYourFriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Back"
+            android:textAllCaps="false"
+            android:fontFamily="@font/adlam_display"
+            android:backgroundTint="@color/nav_item_color2"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Friends 👥"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/adlam_display"
+            android:layout_marginBottom="10dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerAcceptedFriends"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp" />
+    </LinearLayout>
+
+    <!-- ⬇ Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="0dp"
+        app:itemIconTint="@color/nav_item_color2"
+        app:itemRippleColor="@color/nav_ripple_color"
+        app:itemTextColor="@color/nav_item_color2"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+</FrameLayout>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- SINGLE CHILD of ScrollView -->
+        <LinearLayout
+            android:id="@+id/mainContentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- HEADER -->
+            <!-- Modern User Info Card -->
+            <TextView
+                android:id="@+id/friendProfileNotice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You are visiting friend's profile"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_white_transparent"
+                android:padding="24dp"
+                android:elevation="4dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal">
+
+                <!-- Profile + Badge Row -->
+                <!-- Profile + Badge Row (Centered) -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="12dp">
+
+                    <!-- Profile Image -->
+                    <ImageView
+                        android:id="@+id/profileImageView"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/ic_profile"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bg_round_white"
+                        android:contentDescription="Profile Picture"
+                        android:layout_marginEnd="20dp" />
+
+                    <!-- Badge Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/badgeContainer"
+                        android:layout_width="100dp"
+                        android:layout_height="120dp"
+                        android:elevation="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:backgroundTint="@color/white"
+                            android:padding="4dp">
+
+                            <!-- Badge Image -->
+                            <ImageView
+                                android:id="@+id/badgeImageView"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@drawable/default_badge"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="Badge" />
+
+                            <!-- Badge Name -->
+                            <TextView
+                                android:id="@+id/textBadgeName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:gravity="center"
+                                android:text="Default Badge"
+                                android:textColor="@android:color/black"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+                <!-- Name + Email (Centered Below) -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/textUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your Name"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/textUserEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="user@example.com"
+                        android:textColor="@color/gray"
+                        android:textSize="13sp"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+
+                <!-- Info Stats -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp">
+
+                    <!-- Total Points -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/rounded_white_transparent"
+                        android:padding="12dp"
+                        android:elevation="4dp"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Leaderboard"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray" />
+
+                        <TextView
+                            android:id="@+id/textTotalPoints"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/darkGreen" />
+                    </LinearLayout>
+
+                    <!-- Green Wallet -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/rounded_white_transparent"
+                        android:padding="12dp"
+                        android:elevation="4dp"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Green Wallet"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray" />
+
+                        <TextView
+                            android:id="@+id/textGreenCredits"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorPrimary" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Buttons -->
+                <LinearLayout
+                    android:id="@+id/buttonLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp">
+
+                    <Button
+                        android:id="@+id/btnUpdateName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Update Name"
+                        android:backgroundTint="@color/nav_item_color2"
+                        android:layout_marginEnd="8dp" />
+
+                    <Button
+                        android:id="@+id/btnChooseImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Change Picture"
+                        android:backgroundTint="@color/nav_item_color2" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!-- Tree Growth Container -->
+            <LinearLayout
+                android:id="@+id/treeGrowthContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_white_transparent"
+                android:elevation="10dp"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Recycling Progress by Material"
+                    android:textColor="@color/green"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Repeatable Block for each material -->
+                <!-- Paper -->
+                <include
+                    android:id="@+id/paperInclude"
+                    layout="@layout/item_tree_material" />
+                <!-- Plastic -->
+                <include
+                    android:id="@+id/plasticInclude"
+                    layout="@layout/item_tree_material" />
+                <!-- Glass -->
+                <include
+                    android:id="@+id/glassInclude"
+                    layout="@layout/item_tree_material" />
+                <!-- Metal -->
+                <include
+                    android:id="@+id/metalInclude"
+                    layout="@layout/item_tree_material" />
+                <!-- E-Waste -->
+                <include
+                    android:id="@+id/ewasteInclude"
+                    layout="@layout/item_tree_material" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/badge_upgrade_popup" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="0dp"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/nav_item_color2"
+        app:itemTextColor="@color/nav_item_color2"
+        app:itemRippleColor="@color/nav_ripple_color"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,229 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Top Section with purple background -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="#7B4FFF"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/pointBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="98.85"
+            android:textSize="26sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/pointLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Point Balance"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:layout_below="@id/pointBalance"
+            android:layout_alignStart="@id/pointBalance"/>
+
+        <ImageView
+            android:id="@+id/rewardButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_rewards"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
+
+    <!-- White card with Recycled and Badge Level -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="center">
+
+        <!-- Left block -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/totalRecycled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13.8kg"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOTAL RECYCLED"
+                android:textSize="12sp"
+                android:textColor="#999" />
+        </LinearLayout>
+
+        <!-- Right block -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/badgeLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Silver"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BADGE LEVEL"
+                android:textSize="12sp"
+                android:textColor="#999" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Section Title -->
+    <TextView
+        android:id="@+id/recyclePrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What would you like to recycle today?"
+        android:textSize="16sp"
+        android:textColor="#333"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"/>
+
+    <!-- Horizontal Grid for Materials -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/materialGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp"
+        app:columnCount="4">
+        <!-- Add your icons dynamically or statically here -->
+    </androidx.gridlayout.widget.GridLayout>
+
+    <!-- Explore Section -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="16dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp">
+
+            <!-- Drop-point card -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFEB3B"
+                android:padding="12dp"
+                android:layout_marginEnd="12dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:text="Add new Drop-Point"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"/>
+
+                <TextView
+                    android:text="Gain more point by locating new drop point"
+                    android:textSize="12sp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+
+            <!-- Leaderboard card -->
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#7B4FFF"
+                android:padding="12dp"
+                android:layout_marginEnd="12dp">
+
+                <TextView
+                    android:text="Leaderboard"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"/>
+
+                <TextView
+                    android:text="131th place"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+
+            <!-- Reward ready card -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#F44336"
+                android:padding="12dp">
+
+                <TextView
+                    android:text="Ready for reward?"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"/>
+
+                <TextView
+                    android:text="- Cup of coffee\n- Bean bag"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Bottom Nav Stays Same -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/nav_item_color2"
+        app:itemTextColor="@color/nav_item_color2"
+        android:elevation="8dp"/>
+</LinearLayout>

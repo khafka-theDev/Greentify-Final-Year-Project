@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginBottom="6dp"
+    android:elevation="8dp"
+    app:cardCornerRadius="16dp"
+    android:backgroundTint="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="12dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Image -->
+        <ImageView
+            android:id="@+id/rewardImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/reward_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Reward Name -->
+        <TextView
+            android:id="@+id/rewardName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Eco-Friendly Bottle"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="@id/rewardImage"
+            app:layout_constraintStart_toEndOf="@id/rewardImage"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/rewardDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Reusable water bottle made from recycled plastic."
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/rewardName"
+            app:layout_constraintStart_toStartOf="@id/rewardName"
+            app:layout_constraintEnd_toEndOf="@id/rewardName" />
+
+        <!-- Points -->
+        <TextView
+            android:id="@+id/rewardPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Points: 250"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/rewardDescription"
+            app:layout_constraintStart_toStartOf="@id/rewardName" />
+
+        <!-- Expiry -->
+        <TextView
+            android:id="@+id/rewardExpiry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expires: 31 Dec 2025"
+            android:textColor="#888888"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/rewardPoints"
+            app:layout_constraintStart_toStartOf="@id/rewardName" />
+
+        <!-- Stock -->
+        <TextView
+            android:id="@+id/rewardStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In Stock"
+            android:textColor="#4CAF50"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/rewardExpiry"
+            app:layout_constraintStart_toStartOf="@id/rewardName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

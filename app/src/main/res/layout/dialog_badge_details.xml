@@ -1,0 +1,88 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="@drawable/rounded_card"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Top Badge Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_card_purple"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/yourBadgeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Badge!"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <ImageView
+                android:id="@+id/dialogCurrentBadgeImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/default_badge" />
+
+            <TextView
+                android:id="@+id/dialogCurrentBadgeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Default Badge"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/dialogCurrentBadgePoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 Points"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- 2x2 Grid for First 4 Badges -->
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:columnCount="2"
+            app:useDefaultMargins="true"
+            app:alignmentMode="alignMargins"
+            android:layout_gravity="center">
+
+            <include layout="@layout/item_badge_level_default"/>
+            <include layout="@layout/item_badge_level_bronze"/>
+            <include layout="@layout/item_badge_level_silver"/>
+            <include layout="@layout/item_badge_level_gold"/>
+        </androidx.gridlayout.widget.GridLayout>
+
+        <!-- Centered Platinum Badge -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center_horizontal">
+
+            <include layout="@layout/item_badge_level_platinum"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
