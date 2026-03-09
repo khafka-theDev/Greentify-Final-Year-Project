@@ -12,9 +12,9 @@ public class CloudinaryManager {
     public static void init(Context context) {
         if (!isInitialized) {
             Map<String, String> config = new HashMap<>();
-            config.put("cloud_name", "diirc1eey");
-            config.put("api_key", "843851974229233");
-            config.put("api_secret", "VCniMssyCUXFiqi4-0OSxfZ9Z6s");
+            config.put("cloud_name", "");
+            config.put("api_key", "");
+            config.put("api_secret", "");
             MediaManager.init(context, config);
             isInitialized = true;
         }

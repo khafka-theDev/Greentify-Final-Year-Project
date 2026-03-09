@@ -1,143 +1,243 @@
-# QuizGame
+Greentify 🌱
+Table of Contents
 
-## Table of Contents
+General Info
 
-* [General Info](#general-info)
-* [Features](#features)
-* [Technologies](#technologies)
-* [Database Model](#database-model)
-* [Project Assignment](#project-assignment)
-* [Getting Started](#getting-started)
-* [Credits](#credits)
+Features
 
-## General Info
+Technologies
 
-A knowledge quiz game Android app developed in Java. 🤔🧠❓
+System Architecture
 
-> Project created as a final project for university subject:  
-> *DPR001 - Mobile Technologies*  
-> *University of Split - University Department of Professional Studies*
+Database Model
 
-<img src="https://github.com/anamarijapapic/QuizGame/assets/92815435/fbc5c66b-a6f7-4040-90d0-c5b56d023616" alt="Main Activity" width="200" style="float: left; margin-right: 10px;">
-<img src="https://github.com/anamarijapapic/QuizGame/assets/92815435/d3564e62-a004-4e0f-86b3-647d1d7da1bd" alt="Game Activity" width="200" style="float: left; margin-right: 10px;">
-<img src="https://github.com/anamarijapapic/QuizGame/assets/92815435/f5212692-8eca-4f31-881e-3a4254a6d224" alt="Leaderboard" width="200" style="float: left; margin-right: 10px;">
-<img src="https://github.com/anamarijapapic/QuizGame/assets/92815435/c77a0540-6ca8-4e08-bf0f-f044218f3203" alt="Personal Leaderboard" width="200" style="float: left; margin-right: 10px;">
+Getting Started
 
-## Features
+Future Improvements
 
-- User authentication (Firebase Authentication service - email and password authentication)
-    - Registration
-    - Login
-    - Logout
-- Game logic
-    - Timer
-        - Countdown timer (60 seconds)
-        - Ending the game when the timer reaches zero
-    - Scoring
-        - Awarding points (+100) for correct answers
-        - Penalizing points (-100) for incorrect answers (if the user has any points)
-    - Question and answer handling
-        - Retrieving questions from an API (Open Trivia Database) using Retrofit
-        - Displaying questions and answers
-        - Handling user's answer selection
-- Saving results to Firebase Realtime Database
-- Leaderboard
-    - Displaying top 10 results among all players
-- Personal leaderboard
-    - Displaying all of the user's previous results arranged from recent to oldest
-    - Displaying all of the user's previous results arranged from highest to lowest score
-- Handling game interruptions
-    - Saving the game state when the user receives a call
-    - Restoring the game state when the user returns to the app after the call
-- Animations
-    - "Celebratory" animation when the user sets a new personal best score
+General Info
 
-## Technologies
+Greentify is a mobile recycling application developed for Android that encourages environmentally friendly behavior through gamification elements such as points, badges, rewards, and leaderboards.
 
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=Gradle&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28.svg?style=for-the-badge&logo=Firebase&logoColor=black)
-![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white)
+The application allows users to record their recycling activities, upload proof of recycling, and earn points based on the weight and type of materials recycled. These points can later be redeemed for rewards while also allowing users to compete with others through a global leaderboard and social features.
 
-## Database Model
+Greentify was developed as part of a Final Year Project (FYP) titled:
 
-```mermaid
----
-title: Firebase Realtime Database Schema
----
-graph TD
-    quizgame[(quizgame)]
-    quizgame --> leaderboard
-    quizgame --> personal_leaderboard
-    leaderboard -->|has many| player_scores
-    personal_leaderboard -->|has many| personal_scores
-```
+"Preserving Green Environment Through Recycling and Gamification"
 
-For example, the database could look like this:
-```
-quizgame
-  |_ leaderboard
-  |   |_ johndoe: 1500
-  |   |_ janedoe: 1900
-  |_ personal_leaderboard
-      |_ johndoe:
-      |   |_ 1706131648510: 1300
-      |   |_ 1706132545905: 1500
-      |   |_ 1706134089855: 800
-      |   |_ 1706283706395: 0
-      |_ janedoe
-          |_ 1706280830140: 500
-          |_ 1706282857804: 1900
-          |_ 1706283278266: 600
-```
+The goal of the project is to promote sustainable behavior and increase recycling participation by making recycling more engaging and interactive for users.
 
-To explain the structure further:
-- `quizgame`: The root node of the database.
-  - `leaderboard`: Branch storing scores for all players in the game.
-    - `username`: A player's entry with their high-score.
-  - `personal_leaderboard`: Branch storing personalized scores for players.
-    - `username`: Sub-branch for `username`'s personalized scores.
-      - `timestamp`: Specific score entries with associated timestamps.
+Features
+User Authentication
 
-## Project Assignment
+Firebase Authentication
 
-Create a game called "Knowledge Quiz" (the quiz topic is arbitrary). In order for the user to be able to play the game, they must be authenticated (Firebase). After successful login, authenticated users are redirected to the option to start the game. The user can play the game any number of times and has access to the results they have saved. If the user receives a call while playing the game, upon ending or rejecting the call, the user is returned to the screen where they left off, and their result remains saved, allowing them to continue the quiz uninterrupted.
+Email and password registration/login
 
-### Additional Features
+Secure user account management
 
-1. The knowledge quiz game awards points and seconds. Each correct answer rewards the player with additional points and/or seconds, while incorrect answers are penalized. Seconds count down as the user plays, and the game ends when the seconds reach zero.
-2. A successful result is "celebrated" with an activity featuring a "celebratory animation."
-3. Create a list of the top 10 results collected among all players.
+Recycling Submission
 
-### Seminar Defense Practical Task
+Users can submit recycling activities by:
 
-1. After the user successfully logs in, in addition to opening the option to play a new game, there is also an option to view all of the user's previously saved results arranged from highest to lowest. The results are obtained by clicking a button and displayed on a new Activity in a RecyclerView.
-2. At the end of each played game, when saving the results, the user is shown their position relative to all saved results in the database. For example, it says "This is the fifth best result so far."
+Selecting recycling material types:
 
-## Getting Started
+Paper
 
-### Prerequisites
+Plastic
 
-- Android Studio
-- Android SDK
-- Emulator or physical device
-- Firebase project (Google account required) with the following services enabled:
-    - Firebase Authentication
-    - Firebase Realtime Database
+E-Waste
 
-### Running the Project
+Finding nearby recycling centers using Google Maps API
 
-1. Clone the repository
-    ```bash
-    git clone git@github.com:anamarijapapic/QuizGame.git
-    ```
-2. Open the project in Android Studio
-3. Connect the project to your Firebase project
-    - Download the `google-services.json` file from your Firebase project
-    - Move your downloaded `google-services.json` file into your module (app-level) root directory
-3. Run the project on an emulator or a physical device
+Uploading proof of recycling (image)
 
-## Credits
+Entering the weight of recycled materials
 
-- [Anamarija Papić](https://github.com/anamarijapapic)
+Points are automatically calculated based on the recycled material.
+
+Gamification System
+
+Greentify integrates several gamification elements to motivate users:
+
+Points System
+
+Users earn points based on recycling weight
+
+Points accumulate as Green Credits
+
+Badges
+
+Users unlock achievements based on recycling milestones
+
+Reward System
+
+Users can redeem their points for rewards
+
+Rewards are managed by the admin system
+
+Leaderboard
+
+Global ranking system
+
+Users can compare their recycling contributions with others
+
+Social Features
+
+Add and manage friends
+
+Compare recycling achievements with friends
+
+View public leaderboard rankings
+
+Recycling Facility Finder
+
+Uses Google Maps API
+
+Detects user's current location
+
+Displays nearby recycling facilities
+
+Provides navigation via Google Maps
+
+Technologies
+Mobile Development
+
+Kotlin
+
+Java
+
+Android Studio
+
+XML UI Layout
+
+Backend & Cloud Services
+
+Firebase Authentication – user login and account management
+
+Firebase Realtime Database – leaderboard and real-time data
+
+Firebase Firestore – recycling history and app data storage
+
+Cloudinary – image storage for recycling proof
+
+APIs
+
+Google Maps API
+
+Google Places API
+
+Fused Location Provider API
+
+System Architecture
+
+Greentify uses a cloud-based architecture where Firebase services manage authentication and real-time data while Cloudinary handles image storage.
+
+User
+ │
+ ▼
+Android Application (Kotlin/Java)
+ │
+ ├── Firebase Authentication
+ │
+ ├── Firebase Firestore
+ │     └── Recycling submissions
+ │
+ ├── Firebase Realtime Database
+ │     └── Leaderboard & user points
+ │
+ └── Cloudinary
+       └── Recycling proof images
+Database Model
+Firestore Example Structure
+users
+   └── userId
+        ├── username
+        ├── email
+        ├── greenCredits
+        └── badges
+
+recycling_submissions
+   └── submissionId
+        ├── userId
+        ├── materialType
+        ├── weight
+        ├── pointsEarned
+        ├── recyclingCenter
+        └── imageUrl
+Realtime Database Example
+leaderboard
+   └── userId
+        ├── username
+        ├── points
+        └── avatarUrl
+Getting Started
+Prerequisites
+
+You will need the following tools installed:
+
+Android Studio
+
+Android SDK
+
+Emulator or physical Android device
+
+Firebase project
+
+Cloudinary account
+
+Setup Instructions
+1 Clone the repository
+git clone https://github.com/yourusername/greentify.git
+2 Open the project
+
+Open the project using Android Studio.
+
+3 Connect Firebase
+
+Create a Firebase project
+
+Enable:
+
+Firebase Authentication
+
+Firestore Database
+
+Realtime Database
+
+Download the Firebase configuration file:
+
+google-services.json
+
+Place it inside:
+
+app/google-services.json
+4 Configure Cloudinary
+
+Add your Cloudinary credentials inside the project configuration:
+
+cloud_name
+api_key
+api_secret
+5 Run the Application
+
+Run the application using:
+
+Android Emulator
+or
+
+Physical Android device
+
+Future Improvements
+
+Planned improvements for the application include:
+
+AI-based waste classification using camera detection
+
+Advanced analytics for recycling behavior
+
+Push notifications for recycling reminders
+
+Expansion of social features
+
+Integration with real-world recycling organizations

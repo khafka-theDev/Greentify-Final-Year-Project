@@ -34,7 +34,7 @@
         <!-- Google Maps API Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD9nO_yGM4V4GFV4_fdmte9AR8Guvk2sxg" />
+            android:value="" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
