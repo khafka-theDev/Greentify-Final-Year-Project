@@ -1,233 +1,178 @@
-Greentify 🌱
-Table of Contents
+# 🌱 Greentify
 
-General Info
+## Table of Contents
+- [General Info](#general-info)
+- [Features](#features)
+- [Technologies](#technologies)
+- [System Architecture](#system-architecture)
+- [Database Model](#database-model)
+- [Future Improvements](#future-improvements)
 
-Features
+---
 
-Technologies
+# General Info
 
-System Architecture
+**Greentify** is a mobile recycling application developed for Android that encourages environmentally friendly behavior through gamification elements such as **points, badges, rewards, and leaderboards**.
 
-Database Model
+The application allows users to record their recycling activities, upload proof of recycling, and earn points based on the **weight and type of materials recycled**. These points can later be redeemed for rewards while also allowing users to compete with others through a **global leaderboard and social features**.
 
-Getting Started
+Greentify was developed as part of a **Final Year Project (FYP)** titled:
 
-Future Improvements
+> **"Preserving Green Environment Through Recycling and Gamification"**
 
-General Info
+The goal of this project is to **promote sustainable behavior and increase recycling participation** by making recycling more engaging and interactive for users.
 
-Greentify is a mobile recycling application developed for Android that encourages environmentally friendly behavior through gamification elements such as points, badges, rewards, and leaderboards.
+---
 
-The application allows users to record their recycling activities, upload proof of recycling, and earn points based on the weight and type of materials recycled. These points can later be redeemed for rewards while also allowing users to compete with others through a global leaderboard and social features.
+# Features
 
-Greentify was developed as part of a Final Year Project (FYP) titled:
+## User Authentication
+- Firebase Authentication
+- Email and password registration/login
+- Secure user account management
 
-"Preserving Green Environment Through Recycling and Gamification"
+---
 
-The goal of the project is to promote sustainable behavior and increase recycling participation by making recycling more engaging and interactive for users.
-
-Features
-User Authentication
-
-Firebase Authentication
-
-Email and password registration/login
-
-Secure user account management
-
-Recycling Submission
+## Recycling Submission
 
 Users can submit recycling activities by:
 
-Selecting recycling material types:
-
-Paper
-
-Plastic
-
-E-Waste
-
-Finding nearby recycling centers using Google Maps API
-
-Uploading proof of recycling (image)
-
-Entering the weight of recycled materials
+- Selecting recycling material types:
+  - Paper
+  - Plastic
+  - E-Waste
+- Finding nearby recycling centers using **Google Maps API**
+- Uploading proof of recycling (image)
+- Entering the **weight of recycled materials**
 
 Points are automatically calculated based on the recycled material.
 
-Gamification System
+---
 
-Greentify integrates several gamification elements to motivate users:
+## Gamification System
 
-Points System
+Greentify integrates several gamification elements to motivate users.
 
-Users earn points based on recycling weight
+### Points System
+- Users earn points based on recycling weight
+- Points accumulate as **Green Credits**
 
-Points accumulate as Green Credits
+### Badges
+- Users unlock achievements based on recycling milestones
 
-Badges
+### Reward System
+- Users can redeem their points for rewards
+- Rewards are managed by the admin system
 
-Users unlock achievements based on recycling milestones
+### Leaderboard
+- Global ranking system
+- Users can compare their recycling contributions with others
 
-Reward System
+---
 
-Users can redeem their points for rewards
+## Social Features
+- Add and manage friends
+- Compare recycling achievements with friends
+- View public leaderboard rankings
 
-Rewards are managed by the admin system
+---
 
-Leaderboard
+## Recycling Facility Finder
+- Uses **Google Maps API**
+- Detects user's current location
+- Displays nearby recycling facilities
+- Provides navigation via Google Maps
 
-Global ranking system
+---
 
-Users can compare their recycling contributions with others
+# Technologies
 
-Social Features
+## Mobile Development
+- Kotlin
+- Java
+- Android Studio
+- XML UI Layout
 
-Add and manage friends
+## Backend & Cloud Services
+- **Firebase Authentication** – user login and account management
+- **Firebase Realtime Database** – leaderboard and real-time data
+- **Firebase Firestore** – recycling history and app data storage
+- **Cloudinary** – image storage for recycling proof
 
-Compare recycling achievements with friends
+## APIs
+- Google Maps API
+- Google Places API
+- Fused Location Provider API
 
-View public leaderboard rankings
+---
 
-Recycling Facility Finder
+# System Architecture
 
-Uses Google Maps API
+Greentify uses a **cloud-based architecture** where Firebase services manage authentication and real-time data while Cloudinary handles image storage.
 
-Detects user's current location
-
-Displays nearby recycling facilities
-
-Provides navigation via Google Maps
-
-Technologies
-Mobile Development
-
-Kotlin
-
-Java
-
-Android Studio
-
-XML UI Layout
-
-Backend & Cloud Services
-
-Firebase Authentication – user login and account management
-
-Firebase Realtime Database – leaderboard and real-time data
-
-Firebase Firestore – recycling history and app data storage
-
-Cloudinary – image storage for recycling proof
-
-APIs
-
-Google Maps API
-
-Google Places API
-
-Fused Location Provider API
-
-System Architecture
-
-Greentify uses a cloud-based architecture where Firebase services manage authentication and real-time data while Cloudinary handles image storage.
 
 User
- │
- ▼
+│
+▼
 Android Application (Kotlin/Java)
- │
- ├── Firebase Authentication
- │
- ├── Firebase Firestore
- │     └── Recycling submissions
- │
- ├── Firebase Realtime Database
- │     └── Leaderboard & user points
- │
- └── Cloudinary
-       └── Recycling proof images
-Database Model
-Firestore Example Structure
+│
+├── Firebase Authentication
+│
+├── Firebase Firestore
+│ └── Recycling submissions
+│
+├── Firebase Realtime Database
+│ └── Leaderboard & user points
+│
+└── Cloudinary
+└── Recycling proof images
+
+
+---
+
+# Database Model
+
+## Firestore Structure
 users
-   └── userId
-        ├── username
-        ├── email
-        ├── greenCredits
-        └── badges
+└── userId
+├── username
+├── email
+├── greenCredits
+└── badges
 
 recycling_submissions
-   └── submissionId
-        ├── userId
-        ├── materialType
-        ├── weight
-        ├── pointsEarned
-        ├── recyclingCenter
-        └── imageUrl
-Realtime Database Example
+└── submissionId
+├── userId
+├── materialType
+├── weight
+├── pointsEarned
+├── recyclingCenter
+└── imageUrl
+
+
+## Realtime Database Example
 leaderboard
-   └── userId
-        ├── username
-        ├── points
-        └── avatarUrl
-Getting Started
-Prerequisites
+└── userId
+├── username
+├── points
+└── avatarUrl
+
+
+---
+
+# Getting Started
+
+## Prerequisites
 
 You will need the following tools installed:
 
-Android Studio
+- Android Studio
+- Android SDK
+- Emulator or physical Android device
+- Firebase project
+- Cloudinary account
 
-Android SDK
-
-Emulator or physical Android device
-
-Firebase project
-
-Cloudinary account
-
-Setup Instructions
-1 Clone the repository
-git clone https://github.com/yourusername/greentify.git
-2 Open the project
-
-Open the project using Android Studio.
-
-3 Connect Firebase
-
-Create a Firebase project
-
-Enable:
-
-Firebase Authentication
-
-Firestore Database
-
-Realtime Database
-
-Download the Firebase configuration file:
-
-google-services.json
-
-Place it inside:
-
-app/google-services.json
-4 Configure Cloudinary
-
-Add your Cloudinary credentials inside the project configuration:
-
-cloud_name
-api_key
-api_secret
-5 Run the Application
-
-Run the application using:
-
-Android Emulator
-or
-
-Physical Android device
-
+---
 Future Improvements
 
 Planned improvements for the application include:
